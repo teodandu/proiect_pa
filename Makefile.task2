@@ -1,0 +1,20 @@
+CC = gcc
+SRC = task2.c game_of_life.c
+OUT = task2.out
+
+all: $(OUT)
+
+$(OUT): $(SRC)
+	$(CC) $(SRC) -o $(OUT)
+
+run:
+	mkdir -p out
+	./$(OUT) in/data6.in out/data6.out
+	./$(OUT) in/data7.in out/data7.out
+	./$(OUT) in/data8.in out/data8.out
+	./$(OUT) in/data9.in out/data9.out
+	./$(OUT) in/data10.in out/data10.out
+
+clean:
+	rm -f $(OUT) out/*.out
+	
