@@ -31,6 +31,18 @@ char **citire_din_fisier(const char *fisier_input, int *n, int *m, int *k, int *
     fclose(file);
     return matr;
 }
+void afisare_in_fisier(char **matr, int n, const char *fisier_output) {
+       FILE *file = fopen(fisier_output, "w");
+       if (file == NULL) {
+           perror("Eroare la deschiderea fisierului pentru scriere");
+           exit(1);
+       }
+       for (int i = 0; i < n; i++) {
+           fprintf(file, "%s\n", matr[i]);
+       }
+       fprintf(file, "\n");
+       fclose(file);
+}
 
 void eliberare_memorie(char **matr, int n) {
     for (int i = 0; i < n; i++) {
