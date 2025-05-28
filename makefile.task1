@@ -1,0 +1,19 @@
+CC = gcc
+SRC = task1.c 
+OUT = task1.out
+
+all: $(OUT)
+
+$(OUT): $(SRC)
+	$(CC) $(SRC) -o $(OUT)
+
+run:
+	mkdir -p out
+	./$(OUT) in/data1.in out/data1.out
+	./$(OUT) in/data2.in out/data2.out
+	./$(OUT) in/data3.in out/data3.out
+	./$(OUT) in/data4.in out/data4.out
+	./$(OUT) in/data5.in out/data5.out
+
+clean:
+	rm -f $(OUT) out/*.out
